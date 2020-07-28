@@ -11,5 +11,8 @@ def test(a, b, cmp, cname=None):
 def test_eq(a, b):
     test(a, b, operator.eq, '==')
 
+MNIST_URL='http://deeplearning.net/data/mnist/mnist.pkl'
+
+import torch
 def near(a,b): return torch.allclose(a, b, rtol=1e-3, atol=1e-5)
 def test_near(a,b): test(a,b,near)
